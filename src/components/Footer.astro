@@ -1,0 +1,56 @@
+---
+import { content } from '../content';
+
+const { links } = content.footer;
+---
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <nav class="links" aria-label="Footer links">
+      {links.map((link) => (
+        <a
+          href={link.url}
+          class="footer-link"
+          {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        >
+          {link.label}
+          {link.external && <span class="sr-only"> (opens in new tab)</span>}
+        </a>
+      ))}
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-2xl) 0;
+    margin-top: var(--space-md);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+  }
+
+  .footer-link {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--color-accent);
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+import { content } from '../content';
+
+const { paragraphs } = content.about;
+---
+
+<section class="about" aria-label="About">
+  <h2>About</h2>
+  <div class="content">
+    {paragraphs.map((text) => (
+      <p>{text}</p>
+    ))}
+  </div>
+</section>
+
+<style>
+  .about {
+    padding-bottom: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-2xl);
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8125rem;
+  }
+
+  .content {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  p {
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    font-size: 0.9375rem;
+  }
+</style>
