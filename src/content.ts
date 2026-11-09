@@ -57,6 +57,11 @@ export const content: SiteContent = {
     location: 'Lagos, Nigeria (UTC+1) \u00b7 Remote',
     links: [
       {
+        label: 'Case Studies',
+        url: 'https://portfolio.novarq.tech/case-studies',
+        external: true,
+      },
+      {
         label: 'Email',
         url: 'mailto:okosachideragia@gmail.com',
         external: false,
